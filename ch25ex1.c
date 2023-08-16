@@ -1,19 +1,20 @@
-// 함수의 인수로 변수의 값을 전달하기 */
+//난수 반환하는 함수
 #include <stdio.h>
-void get_twice(int num);
+#include <stdlib.h>
+#include <time.h>
+int get_random();
 int main()
 {
-    int num;
-    printf("정수 입력: ");
-    scanf("%d", &num);
-
-    get_twice(num);
-    printf("in main(), num = %d\n", num);
+    int r;
+    r = get_random();
+    printf("행운의 번호: %d", get_random() );
     return 0;
 }
 
-void get_twice(int num)
+int get_random()
 {
-    num = num * 2;
-    printf(" in get_twice(), num = %d\n", num);
+    int r;
+    srand((unsigned int)time(NULL));
+    r = rand() % 45 + 1;   // 1~ 45
+    return r;
 }

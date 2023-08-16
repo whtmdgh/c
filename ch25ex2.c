@@ -1,19 +1,28 @@
+//누적합 반환
 #include <stdio.h>
-void print_gugudan(int dan);
 
+int get_total(int num) ;
 int main()
 {
-    int dan;
-    printf("단을 입력해라: ");
-    scanf("%d", &dan);
-    print_gugudan(dan);
+    int num, sum;
+    printf("정수 입력: ");
+    scanf("%d", &num);
+    sum = get_total(num);
+    printf("1 ~ %d까지의 누적합:%d", num, sum);
     return 0;
 }
 
-void print_gugudan(int dan)
+int get_total(int num)
 {
+    int sum = 0;
     int i;
-    for (i=1; i<=9; i++){
-        printf("%d * %d = %d\n", dan, i, dan * i);
+    for( i=1; i<=num; i++) {
+        sum += i;
     }
+    return sum;
 }
+
+
+
+
+
