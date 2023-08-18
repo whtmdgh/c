@@ -1,6 +1,5 @@
-/* ch27ex4.c
-2023.2.24 김연숙
-파일 random access를 위한 fseek()사용하기 */
+//파일 random access를 위한 fseek() 사용하기
+
 #include <stdio.h>
 int main()
 {
@@ -14,19 +13,19 @@ int main()
     // 파일로부터 읽기
     fptr = fopen("test.txt", "r");
 
-    // SEEK_SET
+    //SEEK_SET
     fseek(fptr, 3, SEEK_SET);
     ch = fgetc(fptr);  // 문자 하나 읽어오기
     putchar(ch);
 
-    // SEEK_CUR
+    //SEEK_CUR
     fseek(fptr, 3, SEEK_CUR);
     ch = fgetc(fptr);  // 문자 하나 읽어오기
     putchar(ch);
 
-    // SEEK_END(EOF부터 이동)
+    // SEEK_END(EDF부터 이동)
     fseek(fptr, -3, SEEK_END);
-    ch = fgetc(fptr);  // 문자 하나 읽어오기
+    ch = fgetc(fptr);  // ""
     putchar(ch);
 
     fclose(fptr);
